@@ -1,0 +1,10 @@
+{
+  "name": "document-intake-web-application",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CPAN-212 Lab 2 - Core Node.js RESTful Document Intake Application",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": { "node": ">=18" }
+}
