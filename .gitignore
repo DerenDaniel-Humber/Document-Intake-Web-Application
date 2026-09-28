@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+data/content/*
+!data/content/.gitkeep
+data/exports/*
+!data/exports/.gitkeep
+data/audit.log
