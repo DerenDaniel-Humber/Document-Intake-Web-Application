@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Intake</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><div><p class="eyebrow">OPERATIONS PORTAL</p><h1>Document Intake</h1><p>Register, track, and process client documents.</p></div><button id="exportButton" class="secondary">Generate Daily Export</button></header>
+  <main>
+    <section class="card form-card"><h2>Submit a document</h2><form id="documentForm">
+      <label>Client reference<input name="clientReference" required placeholder="e.g. CL-2026-1042"></label>
+      <label>Document type<select name="documentType" required><option value="">Select type</option><option>SIGNED_AGREEMENT</option><option>IDENTITY_RECORD</option><option>PROOF_OF_ADDRESS</option><option>FINANCIAL_STATEMENT</option></select></label>
+      <label>File name<input name="fileName" required placeholder="agreement.txt"></label>
+      <label class="wide">Document content<textarea name="content" rows="5" required placeholder="Enter document content"></textarea></label>
+      <button type="submit">Register Document</button>
+    </form></section>
+    <section class="card"><div class="section-head"><div><h2>Document registry</h2><p id="count">0 documents</p></div></div>
+      <div class="filters"><input id="clientFilter" placeholder="Search client reference"><select id="typeFilter"><option value="">All types</option><option>SIGNED_AGREEMENT</option><option>IDENTITY_RECORD</option><option>PROOF_OF_ADDRESS</option><option>FINANCIAL_STATEMENT</option></select><select id="statusFilter"><option value="">All statuses</option><option>RECEIVED</option><option>VALIDATED</option><option>QUEUED</option><option>PROCESSED</option><option>REJECTED</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Client</th><th>Type</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead><tbody id="documentRows"></tbody></table></div>
+    </section>
+  </main>
+  <dialog id="modal"><button id="closeModal" class="close">×</button><h2 id="modalTitle">Document</h2><pre id="modalContent"></pre></dialog>
+  <div id="toast"></div><script src="app.js"></script>
+</body></html>
